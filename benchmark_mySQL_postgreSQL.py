@@ -87,7 +87,7 @@ for db, url in DATABASES.items():
         print(f"Errore nel benchmark per {db}: {e}")
 
 for db, metrics in results.items():
-    print(f"\nRResults for {db}:")
+    print(f"\nResults for {db}:")
     print(f"  Insert time: {metrics['insert_time']} sec")
     print(f"  Read time: {metrics['read_time']} sec (Records: {metrics['record_count']})")
     print(f"  Transaction time (rollback): {metrics['transaction_time']} sec")

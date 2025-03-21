@@ -55,7 +55,7 @@ def benchmark_transaction(session):
             )
         session.rollback()
     except Exception as e:
-        print("Errore nella transazione:", e)
+        print("Error in transaction:", e)
     end = time.time()
     return end - start
 
@@ -87,7 +87,7 @@ for db, url in DATABASES.items():
         print(f"Errore nel benchmark per {db}: {e}")
 
 for db, metrics in results.items():
-    print(f"\nRisultati per {db}:")
-    print(f"  Tempo di inserimento: {metrics['insert_time']} sec")
-    print(f"  Tempo di lettura: {metrics['read_time']} sec (Records: {metrics['record_count']})")
-    print(f"  Tempo di transazione (rollback): {metrics['transaction_time']} sec")
+    print(f"\nRResults for {db}:")
+    print(f"  Insert time: {metrics['insert_time']} sec")
+    print(f"  Read time: {metrics['read_time']} sec (Records: {metrics['record_count']})")
+    print(f"  Transaction time (rollback): {metrics['transaction_time']} sec")
